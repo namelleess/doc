@@ -84,18 +84,18 @@ Each field in a section must be an object with:
 	- Like select, but with an optional free-form value:
 ```json
 {
-	id: "fontPrimary",
-	name: "Primary Font",
-	type: "font",
-	options: [
+	"id": "fontPrimary",
+	"name": "Primary Font",
+	"type": "font",
+	"options": [
 		//value would be replaced with font path or link, depending on template internal structure
-		{ value: "Inter", label: "Inter" },
-		{ value: "Roboto", label: "Roboto" },
-		{ value: "Open Sans", label: "Open Sans" },
-		{ value: "Montserrat", label: "Montserrat" },
+		{ "value": "Inter", "label": "Inter" },
+		{ "value": "Roboto", "label": "Roboto" },
+		{ "value": "Open Sans", "label": "Open Sans" },
+		{ "value": "Montserrat", "label": "Montserrat" },
 	],
-	default: "Inter",
-	allowCustom: true,
+	"default": "Inter",
+	"allowCustom": true,
 }
 ```
 4. `object`
