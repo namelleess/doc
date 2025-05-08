@@ -154,7 +154,7 @@ Repeatable items:
 
 ## Additional Points
 
-1. `id` field would be converted into a JSON object during build and preview, so it would be scope unique and follow principles for json object keys.
+1. Each section (and respected fields) would be converted into json object during build and preview, `id` field would become a key of that object, so it must be scope unique and follow principles for json object keys. See the usage below in full example section.
 2. Maximum nesting depth: 3 levels of object/array nesting
 4. All IDs must be unique within their scope
 5. All required fields must be provided
