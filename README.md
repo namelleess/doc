@@ -18,6 +18,8 @@ All templates have access to a global context object in Mustache that includes:
 
 ### Top-Level Structure
 
+Only `sections` and `placeholders` are allowed at the root, any other field is invalid
+
 ```json
 {
   "sections": [
@@ -33,9 +35,10 @@ All templates have access to a global context object in Mustache that includes:
 
 ```json
 {
-  "id": "hero",           // Unique identifier (required)
-  "name": "Hero Section", // Human-readable name for the editor (required)
-  "fields": [             // Array of field definitions (required, min 1)
+  "id": "hero",                              // Unique identifier (required)
+  "name": "Hero Section",                    // Human-readable name for the editor (required)
+  "description": "Hero Section Description", // Human-readable description for the editor (optional)
+  "fields": [                                // Array of field definitions (required, min 1)
     /* Field definitions */
   ]
 }
@@ -48,6 +51,7 @@ All templates have access to a global context object in Mustache that includes:
   "id": "title",        // Unique identifier within section (required)
   "name": "Title",      // Human-readable label (required)
   "type": "text",       // Field type (required)
+  "description": "desc",// Human-readable description for the editor (optional)
   "default": "Welcome!" // Default value (required, type depends on field type)
   // Additional type-specific properties
 }
@@ -80,7 +84,7 @@ Dropdown with predefined options:
     { "value": "intermediate", "label": "Intermediate" },
     { "value": "expert", "label": "Expert" }
   ],
-  "default": "intermediate"
+  "default": "intermediate" // default must be in options
 }
 ```
 
@@ -98,7 +102,7 @@ Font selector with optional custom input:
     { "value": "Roboto", "label": "Roboto" },
     { "value": "Open Sans", "label": "Open Sans" }
   ],
-  "default": "Inter",
+  "default": "Inter", // default must be in options
   "allowCustom": true
 }
 ```
@@ -159,6 +163,7 @@ Repeatable items:
 4. All IDs must be unique within their scope
 5. All required fields must be provided
 6. Values must match their specified types
+7. Only documented keys are allowed for each object/field type
 
 ## Placeholders
 
