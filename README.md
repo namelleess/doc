@@ -198,7 +198,7 @@ Here's a complete example of a simple template:
           "id": "logo",
           "name": "Logo",
           "type": "image",
-          "default": "/images/logo.png"
+          "default": "http://localhost:3000/img.phg"
         },
         {
           "id": "navigation",
@@ -207,7 +207,12 @@ Here's a complete example of a simple template:
           "itemType": {
             "type": "object",
             "fields": [
-              { "id": "label", "name": "Label", "type": "text", "default": "" },
+              {
+                "id": "label",
+                "name": "Label",
+                "type": "text",
+                "default": "None"
+              },
               { "id": "url", "name": "URL", "type": "text", "default": "#" }
             ]
           },
@@ -239,26 +244,37 @@ Here's a complete example of a simple template:
           "id": "backgroundImage",
           "name": "Background Image",
           "type": "image",
-          "default": "/images/hero-bg.jpg"
+          "default": "http://localhost:3000/img.phg"
         },
         {
           "id": "cta",
           "name": "Call to Action",
           "type": "object",
           "fields": [
-            { "id": "text", "name": "Button Text", "type": "text", "default": "Get Started" },
-            { "id": "url", "name": "Button URL", "type": "text", "default": "#contact" },
-            { "id": "style", "name": "Button Style", "type": "select", "options": [
-              { "value": "primary", "label": "Primary" },
-              { "value": "secondary", "label": "Secondary" },
-              { "value": "outline", "label": "Outline" }
-            ], "default": "primary" }
-          ],
-          "default": {
-            "text": "Learn More",
-            "url": "#about",
-            "style": "primary"
-          }
+            {
+              "id": "text",
+              "name": "Button Text",
+              "type": "text",
+              "default": "Get Started"
+            },
+            {
+              "id": "url",
+              "name": "Button URL",
+              "type": "text",
+              "default": "#contact"
+            },
+            {
+              "id": "style",
+              "name": "Button Style",
+              "type": "select",
+              "options": [
+                { "value": "primary", "label": "Primary" },
+                { "value": "secondary", "label": "Secondary" },
+                { "value": "outline", "label": "Outline" }
+              ],
+              "default": "primary"
+            }
+          ]
         }
       ]
     },
@@ -279,19 +295,34 @@ Here's a complete example of a simple template:
           "itemType": {
             "type": "object",
             "fields": [
-              { "id": "icon", "name": "Icon", "type": "image", "default": "/images/icon-default.svg" },
-              { "id": "title", "name": "Title", "type": "text", "default": "" },
-              { "id": "description", "name": "Description", "type": "textarea", "default": "" }
+              {
+                "id": "icon",
+                "name": "Icon",
+                "type": "image",
+                "default": "http://localhost:3000/img.phg"
+              },
+              {
+                "id": "title",
+                "name": "Title",
+                "type": "text",
+                "default": "gere"
+              },
+              {
+                "id": "description",
+                "name": "Description",
+                "type": "textarea",
+                "default": "here"
+              }
             ]
           },
           "default": [
             {
-              "icon": "/images/icon-fast.svg",
+              "icon": "http://localhost:3000/img.phg",
               "title": "Lightning Fast",
               "description": "Our solution is optimized for speed and performance."
             },
             {
-              "icon": "/images/icon-secure.svg",
+              "icon": "http://localhost:3000/img.phg",
               "title": "Secure",
               "description": "Your data is always protected with enterprise-grade security."
             }
@@ -334,6 +365,7 @@ Here's a complete example of a simple template:
     ]
   }
 }
+
 ```
 
 ### index.html
